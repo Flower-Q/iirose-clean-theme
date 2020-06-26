@@ -1,0 +1,99 @@
+@import '~tailwindcss/components.css';
+@import '~tailwindcss/utilities.css';
+
+/* Chat */
+
+.msgavatar,
+.systemCardMediaShareImg,
+.room_chat_content,
+.systemCardMediaShare {
+  @apply rounded shadow !important;
+
+  &:hover {
+    @apply shadow-md !important;
+  }
+}
+
+.systemCardMediaShare {
+  @apply border-0 !important;
+}
+
+.msgavatar {
+  width: calc(2rem + 20px);
+  height: calc(2rem + 20px);
+}
+
+.msgavatar[style*='opacity: 0;'] {
+  @apply opacity-25 !important;
+
+  &:hover {
+    @apply opacity-100 !important;
+  }
+}
+
+.room_chat_content[style*='background'] {
+  @apply px-5 py-4 border-0 box-border !important;
+  min-height: 3rem;
+}
+
+.chatContentHolder {
+  @apply tracking-wide !important;
+  text-shadow: 0 0 6px #000;
+}
+
+/* Room Map */
+
+#mapHolder .roomBox .otherroom,
+#mapHolder .roomBox .userholder,
+#mapHolder .roomBox .userholder .roomavatar .fullBox {
+  @apply rounded !important;
+}
+
+#mapHolder .roomBox .otherroom {
+  @apply shadow-md !important;
+
+  &:hover {
+    @apply shadow-lg !important;
+  }
+}
+
+#mapHolder .roomBox .otherroom .roomName {
+  @apply font-bold !important;
+  text-shadow: 1px 1px 2px #0009;
+}
+
+#mapHolder
+  .roomBox
+  .otherroom[style*='color:rgba(0,0,0,0.75);']
+  .roomName {
+  text-shadow: 1px 1px 2px #fff5;
+}
+
+#mapHolder .roomBox .userholder,
+#mapHolder .roomBox .userholder .roomavatar .fullBox,
+.userStatusBox {
+  @apply shadow !important;
+}
+
+#mapHolder .roomBox .userholder {
+  @apply p-1 !important;
+
+  &:hover {
+    @apply shadow-md !important;
+  }
+}
+
+#mapHolder .roomBox .userholder .userinfoholderName {
+  text-shadow: 1px 1px 2px #fff5;
+}
+
+#mapHolder
+  .roomBox
+  .userholder[style*='color:rgba(255,255,255,0.75);']
+  .userinfoholderName {
+  text-shadow: 1px 1px 2px #0009;
+}
+
+.userStatusBox {
+  @apply rounded-sm border-0 !important;
+}
