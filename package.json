@@ -15,6 +15,7 @@
     "prebuild": "yarn clean",
     "build": "webpack --config webpack.config.ts",
     "build:prod": "cross-env NODE_ENV=production yarn build",
+    "build:css": "webpack --config webpack.css.config.ts",
     "release": "standard-version"
   },
   "dependencies": {
@@ -23,14 +24,18 @@
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
+    "@types/mini-css-extract-plugin": "=1.4.0",
     "@types/node": "^14.0.13",
-    "@types/webpack": "^4.41.17",
-    "@types/webpack-dev-server": "^3.11.0",
+    "@types/webpack": "^4.41.31",
+    "@types/webpack-dev-server": "^3.11.6",
     "autoprefixer": "^9.8.2",
     "cross-env": "^7.0.2",
+    "css-loader": "^5.2.7",
     "cssnano": "^4.1.10",
+    "filter-webpack-output": "^1.2.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "mini-css-extract-plugin": "^1.6.2",
     "postcss-import": "^12.0.1",
     "postcss-import-alias-resolver": "^0.1.1",
     "postcss-loader": "^3.0.0",
@@ -47,5 +52,8 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-userscript": "^2.5.4"
+  },
+  "resolutions": {
+    "@types/webpack": "^4.41.31"
   }
 }
