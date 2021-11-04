@@ -29,7 +29,10 @@ jobs:
       run: yarn build:css
 
     - name: Bump Version
-      run: yarn release --release-as ${{ github.event.inputs.version }}
+      run: |
+        git config --global user.email "flower-q@users.noreply.github.com"
+        git config --global user.name "Flower-Q"
+        yarn release --release-as ${{ github.event.inputs.version }}
 
     - name: Push Tags
       run: git push --follow-tags origin master
