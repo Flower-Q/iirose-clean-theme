@@ -3,97 +3,137 @@
 
 /* Chat */
 
-.msgavatar,
-.systemCardMediaShareImg,
-.room_chat_content,
-.systemCardMediaShare {
-  @apply rounded shadow !important;
+#moveinputSendBtnFunc::before {
+  content: '\f035c';
+}
 
-  &:hover {
-    @apply shadow-md !important;
+#msgholder {
+  .accessoryImg {
+    transform: scale(0.75) translate(-10px, -10px);
   }
-}
 
-.systemCardMediaShare {
-  @apply border-0 !important;
-}
+  .accessoryImgI,
+  .accessoryImg2I,
+  .msgavatar,
+  .systemCardMediaShareImg {
+    @apply rounded;
 
-.msgavatar {
-  width: calc(2rem + 20px);
-  height: calc(2rem + 20px);
-}
-
-.msgavatar[style*='opacity: 0;'] {
-  @apply opacity-25 !important;
-
-  &:hover {
-    @apply opacity-100 !important;
+    width: calc(1.5rem + 20px) !important;
+    height: calc(1.5rem + 20px) !important;
   }
-}
 
-.room_chat_content[style*='background'] {
-  @apply px-5 py-4 border-0 box-border !important;
-  min-height: 3rem;
-}
+  .msgavatar,
+  .room_chat_content,
+  .systemCardMediaShareImg,
+  .systemCardMediaSharePubMsgScale .systemCardMediaShare {
+    @apply rounded shadow !important;
 
-.chatContentHolder {
-  @apply tracking-wide !important;
-  text-shadow: 0 0 6px #000;
+    &:hover {
+      @apply shadow-md !important;
+    }
+  }
+
+  .msgavatar .bgImg {
+    @apply rounded;
+  }
+
+  .msgavatar[style*='opacity: 0;'] {
+    @apply opacity-25 !important;
+
+    &:hover {
+      @apply opacity-100 !important;
+    }
+  }
+
+  .room_chat_content[style*='background'] {
+    @apply px-4 py-3 border-0 box-border min-h-0 !important;
+  }
+
+  .room_chat_content[style*='padding-left:86px;'] {
+    padding-left: 3.5rem !important;
+  }
+
+  .room_chat_content[style*='padding-right:86px;'] {
+    padding-right: 3.5rem !important;
+  }
+
+  .chatContentHolder {
+    @apply tracking-wide !important;
+  }
+
+  .systemCardMediaSharePubMsgScale .systemCardMediaShare {
+    @apply border-0 !important;
+  }
 }
 
 /* Room Map */
 
-#mapHolder .roomBox .otherroom,
-#mapHolder .roomBox .userholder,
-#mapHolder .roomBox .userholder .roomavatar .fullBox {
-  @apply rounded !important;
-}
+#mapHolder {
+  .roomBox {
+    .otherroom {
+      @apply rounded shadow-md !important;
 
-#mapHolder .roomBox .otherroom {
-  @apply shadow-md !important;
+      min-height: 120px !important;
 
-  &:hover {
-    @apply shadow-lg !important;
+      &:hover {
+        @apply shadow-lg !important;
+      }
+
+      [style*='color:rgba(0,0,0,0.75);'] .roomName {
+        text-shadow: 1px 1px 2px #fff5;
+      }
+
+      .roomName {
+        @apply font-bold !important;
+        text-shadow: 1px 1px 2px #0009;
+      }
+
+      .userholder {
+        @apply w-auto h-6 max-w-none p-1 m-2 rounded-full shadow !important;
+
+        &:hover {
+          @apply shadow-md !important;
+        }
+
+        .mood {
+          @apply hidden;
+        }
+
+        .roomavatar {
+          @apply w-6 h-6 ml-px rounded-full;
+
+          .bgImg {
+            @apply rounded-full !important;
+          }
+
+          .fullBox {
+            @apply rounded-full shadow !important;
+          }
+        }
+
+        .userinfoholder {
+          @apply static w-auto h-auto ml-1 !important;
+          padding-top: 0.125rem;
+
+          .userinfoholderName {
+            @apply m-0 max-w-xs font-semibold !important;
+            width: max-content !important;
+            text-shadow: 1px 1px 2px #fff5;
+          }
+
+          .userStatusHolder {
+            @apply mt-px mx-1 static float-right !important;
+
+            .userStatusBox {
+              @apply rounded-sm shadow border-0 !important;
+            }
+          }
+        }
+      }
+
+      .userholder[style*='color:rgba(255,255,255,0.75);'] .userinfoholderName {
+        text-shadow: 1px 1px 2px #0009;
+      }
+    }
   }
-}
-
-#mapHolder .roomBox .otherroom .roomName {
-  @apply font-bold !important;
-  text-shadow: 1px 1px 2px #0009;
-}
-
-#mapHolder
-  .roomBox
-  .otherroom[style*='color:rgba(0,0,0,0.75);']
-  .roomName {
-  text-shadow: 1px 1px 2px #fff5;
-}
-
-#mapHolder .roomBox .userholder,
-#mapHolder .roomBox .userholder .roomavatar .fullBox,
-.userStatusBox {
-  @apply shadow !important;
-}
-
-#mapHolder .roomBox .userholder {
-  @apply p-1 !important;
-
-  &:hover {
-    @apply shadow-md !important;
-  }
-}
-
-#mapHolder .roomBox .userholder .userinfoholderName {
-  text-shadow: 1px 1px 2px #fff5;
-}
-
-#mapHolder
-  .roomBox
-  .userholder[style*='color:rgba(255,255,255,0.75);']
-  .userinfoholderName {
-  text-shadow: 1px 1px 2px #0009;
-}
-
-.userStatusBox {
-  @apply rounded-sm border-0 !important;
 }

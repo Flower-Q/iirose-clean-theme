@@ -46,6 +46,7 @@ async function getConfiguration(): Promise<Configuration> {
                 })
               }),
               require('tailwindcss'),
+              require('postcss-nested'),
               require('postcss-preset-env')({ stage: 1 }),
               require('autoprefixer'),
               require('cssnano')({
