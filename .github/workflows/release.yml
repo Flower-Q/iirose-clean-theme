@@ -77,3 +77,10 @@ jobs:
         asset_path: ./lib/styles.css
         asset_name: styles.css
         asset_content_type: text/css
+
+    - name: Push Release Branch
+      run: |
+        git checkout -b ${{ github.event.inputs.version }}-release
+        git add --force ./lib
+        git commit -m "chore: ${{ github.event.inputs.version }} release files"
+        git push -u origin ${{ github.event.inputs.version }}-release
