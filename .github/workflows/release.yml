@@ -80,7 +80,7 @@ jobs:
 
     - name: Push Release Branch
       run: |
-        git checkout -b ${{ github.event.inputs.version }}-release
+        git checkout -b release-${{ github.event.inputs.version }}
         git add --force ./lib
         git commit -m "chore: ${{ github.event.inputs.version }} release files"
-        git push -u origin ${{ github.event.inputs.version }}-release
+        git push -u origin release-${{ github.event.inputs.version }}
