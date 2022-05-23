@@ -1,0 +1,40 @@
+#danmakuHolder .danmakuItem {
+  @apply w-auto h-6 max-w-none p-1 rounded-full shadow;
+  opacity: 0.8;
+
+  .danmakuIcon {
+    @apply w-6 h-6 mr-1 rounded-full !important;
+
+    .bgImgBox {
+      .bgImg {
+        @apply rounded-full !important;
+      }
+
+      .fullBox {
+        @apply rounded-full shadow !important;
+      }
+    }
+  }
+
+  .danmakuMsgBox {
+    .danmakuInfo {
+      @apply hidden;
+    }
+
+    .danmakuContent {
+      @apply text-xs my-0 mr-1 whitespace-no-wrap overflow-hidden !important;
+      padding-top: 0.125rem;
+      max-width: 66vw;
+      text-overflow: ellipsis;
+      text-shadow: 1px 1px 2px #fff5;
+
+      > * {
+        max-height: 20px;
+      }
+    }
+  }
+
+  .danmakuMsgBox[style*='color: rgba(255, 255, 255, 0.75);'] .danmakuContent {
+    text-shadow: 1px 1px 2px #0009;
+  }
+}

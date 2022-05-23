@@ -7,7 +7,10 @@ async function getConfiguration(): Promise<Configuration> {
 
   return {
     mode: 'production',
-    entry: path.resolve(__dirname, 'src', 'styles.pcss'),
+    entry: {
+      main: path.resolve(__dirname, 'src', 'styles', 'main.pcss'),
+      danmaku: path.resolve(__dirname, 'src', 'styles', 'danmaku.pcss')
+    },
     output: {
       path: path.resolve(__dirname, 'lib')
     },
@@ -16,7 +19,7 @@ async function getConfiguration(): Promise<Configuration> {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: 'styles.css'
+        filename: '[name].css'
       }),
       new FilterWebpackOutput(/\.js$/)
     ],
