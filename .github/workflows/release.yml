@@ -68,14 +68,24 @@ jobs:
         asset_name: iirose-clean-theme.user.js
         asset_content_type: text/javascript
 
-    - name: Attach CSS
+    - name: Attach main.css
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.draft_release.outputs.upload_url }}
-        asset_path: ./lib/styles.css
-        asset_name: styles.css
+        asset_path: ./lib/main.css
+        asset_name: main.css
+        asset_content_type: text/css
+
+    - name: Attach danmaku.css
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.draft_release.outputs.upload_url }}
+        asset_path: ./lib/danmaku.css
+        asset_name: danmaku.css
         asset_content_type: text/css
 
     - name: Push Release Branch
